@@ -12,9 +12,9 @@ config-prod.properties
 
 ## 2.環境に該当するmavenコマンドを実行してテストを行う
 -Dyoda.config引数に実行する環境を設定して実行する。環境は下記になる。(設定しない場合はlocalが設定される)
-prod
-staging
-local
+- prod
+- staging
+- local
 
 ### 本番環境の場合
 ```
