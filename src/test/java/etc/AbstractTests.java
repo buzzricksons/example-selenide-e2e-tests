@@ -1,3 +1,5 @@
+package etc;
+
 import org.junit.jupiter.api.BeforeAll;
 
 import java.time.LocalDateTime;
