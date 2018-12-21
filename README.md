@@ -18,12 +18,12 @@ config-prod.properties
 
 ### 本番環境の場合
 ```
-mvn clean test -Dstcpro.config="prod"
+mvn clean test -Dyoda.config="prod"
 ```
 
 ### staging環境の場合
 ```
-mvn clean test -Dstcpro.config="staging"
+mvn clean test -Dyoda.config="staging"
 ```
 
 ### local環境の場合
