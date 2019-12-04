@@ -16,7 +16,7 @@ public enum Env {
     /**
      * staging環境
      */
-    staging("config-staging"),
+    STAGING("config-staging"),
     /**
      * ローカル環境
      */
