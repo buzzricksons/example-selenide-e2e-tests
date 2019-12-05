@@ -1,4 +1,4 @@
-package page.basic;
+package page;
 
 import static com.codeborne.selenide.Selenide.page;
 
@@ -9,12 +9,11 @@ import static com.codeborne.selenide.Selenide.page;
  */
 public class BeginPage {
     /**
-     * トップページに移動する
+     * 検索ページに移動する
      *
-     * @return トップページ
+     * @return 検索ページ
      */
-    public TopPage goToTop() {
-        //Your Top Page Code
-        return page(TopPage.class);
+    public SearchPage goToSearchPage() {
+        return page(SearchPage.class);
     }
 }

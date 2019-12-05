@@ -7,15 +7,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.function.BiConsumer;
 
+import etc.di.DependencyFactory;
+import etc.di.PageSupplier;
 import etc.key.impl.ConfigKey;
 import etc.setting.ConfigSetting;
 
 /**
  * Initializationを行うクラス
  *
- * @see resources/config-prod.properties
- * @see resources/config-staging.properties
- * @see resources/config-local.properties
+ * @see /resources/config-prod.properties
+ * @see /resources/config-staging.properties
+ * @see /resources/config-local.properties
  *
  * @author Hyungcheol Kim
  */
@@ -25,6 +27,7 @@ public abstract class AbstractTests {
             .filter(value -> !value.isEmpty())
             .ifPresent(value -> System.setProperty(String.format("selenide.%s", k), value));
     private static boolean isNotInitialized = true;
+    protected static final PageSupplier page = DependencyFactory.loadDependencyByEnvAnnotaion(PageSupplier.class);
 
     /**
      * テストを実行する前に一回のみinitializeを行う。

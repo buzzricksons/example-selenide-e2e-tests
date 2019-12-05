@@ -3,11 +3,11 @@ package etc.key.impl;
 import etc.key.Key;
 
 /**
- * {@link _ConfigSetting}で利用するKey
+ * {@link etc.setting.ConfigSetting}で利用するKey
  *
- * @see src/test/resources/config-local.properties
- * @see src/test/resources/config-staging.properties
- * @see src/test/resources/config-prod.properties
+ * @see /src/test/resources/config-local.properties
+ * @see /src/test/resources/config-staging.properties
+ * @see /src/test/resources/config-prod.properties
  *
  * @author Hyungcheol Kim
  */
@@ -39,11 +39,7 @@ public enum ConfigKey implements Key {
     /**
      * 最初に接続するページ
      */
-    PAGE_BEGIN,
-    /**
-     * トップページ
-     */
-    PAGE_TOP;
+    PAGE_BEGIN
     ;
 
     @Override

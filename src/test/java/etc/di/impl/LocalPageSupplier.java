@@ -1,18 +1,21 @@
 package etc.di.impl;
 
+import com.codeborne.selenide.Selenide;
+
 import etc.Env;
 import etc.di.Environment;
 import etc.di.PageSupplier;
 import etc.key.impl.ConfigKey;
 import etc.setting.ConfigSetting;
 import lombok.NoArgsConstructor;
-import page.basic.BeginPage;
-import page.basic.TopPage;
+import page.BeginPage;
+import page.SearchPage;
+import page.SearchResultPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
 /**
- * staging環境用の{@link PageSupplier}
+ * local環境用の{@link PageSupplier}
  *
  * @author Hyungcheol Kim
  */
@@ -20,7 +23,7 @@ import static com.codeborne.selenide.Selenide.open;
 @NoArgsConstructor
 public class LocalPageSupplier implements PageSupplier {
     private final ConfigSetting setting = ConfigSetting.INSTANCE;
-    private TopPage top;
+    private final SearchPage searchPage = begin().goToSearchPage();
 
     @Override
     public BeginPage begin() {
@@ -28,10 +31,15 @@ public class LocalPageSupplier implements PageSupplier {
     }
 
     @Override
-    public TopPage top() {//lazy
-        if (top == null) {
-            this.top = begin().goToTop();
-        }
-        return top;
+    public SearchPage searchPage() {
+        return searchPage;
+    }
+
+    @Override
+    public SearchResultPage searchResultPage(String keyword) {
+        searchPage.searchBox().val(keyword);
+        searchPage.searchButon().click();
+        SearchResultPage searchResultPage = Selenide.page(new SearchResultPage());
+        return searchResultPage;
     }
 }
