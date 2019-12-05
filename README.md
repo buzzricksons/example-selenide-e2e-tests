@@ -57,7 +57,7 @@ is_headless=true
 ├── src
 │   └── test
 │       ├── java
-│       │   ├── TestTopPage.java <----------------------トップページのテストクラス
+│       │   ├── TestSearchPage.java <----------------------検索ページのテストクラス
 │       │   ├── etc
 │       │   │   ├── AbstractTests.java <------テストの初期化を行うクラス(ex:ブラウザの設定、ヘッドレスなど)
 │       │   │   ├── Env.java <----------環境を表すクラス
@@ -77,7 +77,7 @@ is_headless=true
 │       │   └── page
 │       │       └── basic
 │       │           ├── BeginPage.java <------------一番最初にランディングするページオブジェクト
-│       │           └── TopPage.java <----------トップページオブジェクト
+│       │           └── TopPage.java <----------検索ページオブジェクト
 │       └── resources
 │           ├── META-INF
 │           │   └── services

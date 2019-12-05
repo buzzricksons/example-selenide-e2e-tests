@@ -1,7 +1,8 @@
 package etc.di;
 
-import page.basic.BeginPage;
-import page.basic.TopPage;
+import page.BeginPage;
+import page.SearchPage;
+import page.SearchResultPage;
 
 /**
  * ページを提供するインタフェース
@@ -10,15 +11,21 @@ import page.basic.TopPage;
  */
 public interface PageSupplier {
     /**
-     * ストクリProのbeginページ
+     * beginページ
      *
-     * @return
+     * @return beginページ
      */
     BeginPage begin();
     /**
-     * トップページを返す
+     * 検索ページを返す
      *
-     * @return
+     * @return 検索ページ
      */
-    TopPage top();
+    SearchPage searchPage();
+    /**
+     * 検索結果ページを返す
+     *
+     * @return 検索結果ページ
+     */
+    SearchResultPage searchResultPage(String keyword);
 }
